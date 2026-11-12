@@ -2,7 +2,7 @@
     // ---------- Cấu hình ----------
     const AUTO_SKIP = true; // true: tự Skip câu không tìm thấy đáp án
     const AUTO_SUBMIT = true; // true: tự Submit sau khi điền
-    const RELOAD_ANSWER_FILE = true; // false: tái sử dụng ngân hàng trong cùng trang
+    const RELOAD_ANSWER_FILE = false; // false: tái sử dụng ngân hàng trong cùng trang
     const LOOP_INTERVAL = 700; // thời gian kiểm tra câu hỏi tiếp theo (ms)
 
     window.stopAutofill?.();
