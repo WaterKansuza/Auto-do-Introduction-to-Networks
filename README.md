@@ -5,6 +5,7 @@
 B1: Mở bài Checkpoint Exam ra, đợi load xong rồi nhấn nút **Start** để vào bài (phải có câu hỏi thì code mới hoạt động).
 
 B2: Nhấn F12 (vì trang không thể chuột phải), tìm đến ô **Sources** rồi vào phần **Snippet**.
+https://github.com/WaterKansuza/Auto-do-Introduction-to-Networks/blob/21af5828e967a153b7fa642b9f07aa8617e82f7f/src/Instructor1.png
 
 B3: New snippet và dán code *main.js* vào khu vực trống.
 
