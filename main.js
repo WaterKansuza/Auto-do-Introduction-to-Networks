@@ -785,30 +785,59 @@
     };
 
     // ---------- Submit ----------
-    const submitCurrent = async (doc) => {
-        for (let i = 0; i < 20; i++) {
-            const button = deepFind(
-                doc,
-                "button.submit-button, button[aria-label='submit']"
-            ).find((el) => visible(el));
+    
+const submitCurrent = async (doc) => {
+    for (let i = 0; i < 20; i++) {
 
-            if (
-                button &&
-                !button.disabled &&
-                !button.classList.contains("is-disabled")
-            ) {
+        // Tìm các phần tử có khả năng là nút Submit.
+        const controls = deepFind(
+            doc,
+            "button, [role='button'], input[type='submit']"
+        );
+
+        const button = controls.find((el) => {
+            const label = normalize([
+                elementText(el),
+                el.getAttribute("aria-label"),
+                el.getAttribute("title"),
+                el.value
+            ].filter(Boolean).join(" "));
+
+            return (
+                /\bsubmit\b/.test(label) &&
+                visible(el)
+            );
+        });
+
+        if (button) {
+            const disabled =
+                button.disabled ||
+                button.getAttribute("aria-disabled") === "true" ||
+                button.classList.contains("is-disabled") ||
+                button.classList.contains("disabled");
+
+            if (!disabled) {
+                console.log("Đang nhấn Submit...");
+
                 clickElement(button);
 
-                await sleep(500);
+                await sleep(700);
+
+                console.log("Đã thực hiện click Submit.");
 
                 return true;
             }
-
-            await sleep(250);
         }
 
-        return false;
-    };
+        await sleep(250);
+    }
+
+    console.warn(
+        "Không tìm thấy nút Submit khả dụng sau 5 giây."
+    );
+
+    return false;
+};
 
     // ---------- Chạy ----------
     if (RELOAD_ANSWER_FILE || !window.__autofillBank) {
@@ -949,25 +978,39 @@
                                 ready = true;
                             }
 
-                            if (ready) {
-                                // Tránh click lặp khi Submit thủ công.
-                                handled.add(key);
+                          
+if (ready) {
 
-                                if (AUTO_SUBMIT && verified) {
-                                    const ok = await submitCurrent(doc);
+    if (AUTO_SUBMIT && verified) {
 
-                                    console.log(
-                                        ok
-                                            ? `${label}: đã bấm Submit.`
-                                            : `${label}: Submit chưa khả dụng; hãy kiểm tra rồi bấm thủ công.`
-                                    );
+        const ok = await submitCurrent(doc);
 
-                                } else {
-                                    console.log(
-                                        `${label}: hãy kiểm tra kết quả rồi tự bấm Submit.`
-                                    );
-                                }
-                            }
+        if (ok) {
+            // Chỉ đánh dấu sau khi đã click Submit.
+            handled.add(key);
+
+            console.log(
+                `${label}: đã click Submit.`
+            );
+
+        } else {
+            // Không đánh dấu để vòng lặp có thể thử lại.
+            console.warn(
+                `${label}: Submit thất bại. Sẽ thử lại.`
+            );
+        }
+
+    } else {
+
+        // Không tự Submit hoặc chưa thể xác minh.
+        handled.add(key);
+
+        console.log(
+            `${label}: hãy kiểm tra kết quả rồi tự bấm Submit.`
+        );
+    }
+}
+
 
                         } catch (error) {
                             console.error(
