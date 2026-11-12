@@ -1,19 +1,26 @@
 # Macro for Introduction to Networks 
 
 ## Instruction manual - Hướng dẫn sử dụng!
+
 B1: Mở bài Checkpoint Exam ra, đợi load xong rồi nhấn nút **Start** để vào bài (phải có câu hỏi thì code mới hoạt động).
+
 B2: Nhấn F12 (vì trang không thể chuột phải), tìm đến ô **Sources** rồi vào phần **Snippet**.
+
 B3: New snippet và dán code *main.js* vào khu vực trống.
+
 B4: Chuột phải vào Snippet bạn vừa tạo và nhấn **Run**.
+
 B5: copy toàn bộ file Checkpoint1.md rồi dán vào ô nó vừa hiện ở góc trên giữa màn hình.
+
 B6: Enjoy!!
 
 ## 1 số code trên console!
-console.clear() <-- để làm trống console 
-window.stopAutofill() <-- để dừng code không chạy nữa
+
+  console.clear() <-- để làm trống console 
+  window.stopAutofill() <-- để dừng code không chạy nữa
 
 ## Lưu ý:
-Nếu bạn thấy nó không làm câu nào thì đợi đến khi làm đến cuối bạn dừng code lại bằng cách vào console nhập **window.stopAutofill()**, bạn có thể vào Checkpoint1.md để xem đáp án vì trong đó có toàn bộ đáp án!
+  Nếu bạn thấy nó không làm câu nào thì đợi đến khi làm đến cuối bạn dừng code lại bằng cách vào console nhập **window.stopAutofill()**, bạn có thể vào Checkpoint1.md để xem đáp án vì trong đó có toàn bộ đáp án!
 
 # DISCLAIMER – TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM
 
