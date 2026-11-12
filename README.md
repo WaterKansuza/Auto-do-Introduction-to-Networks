@@ -20,6 +20,12 @@ B6: Enjoy!!
   console.clear() <-- để làm trống console 
   window.stopAutofill() <-- để dừng code không chạy nữa
 
+Cách chỉnh cấu hình
+    const AUTO_SKIP = true; // true: tự Skip câu không tìm thấy đáp án
+    const AUTO_SUBMIT = true; // true: tự Submit sau khi điền
+    const RELOAD_ANSWER_FILE = true; // false: tái sử dụng ngân hàng trong cùng trang
+    const LOOP_INTERVAL = 700; // thời gian kiểm tra câu hỏi tiếp theo (ms)
+
 ## Lưu ý:
   Nếu bạn thấy nó không làm câu nào thì đợi đến khi làm đến cuối bạn dừng code lại bằng cách vào console nhập **window.stopAutofill()**, bạn có thể vào Checkpoint1.md để xem đáp án vì trong đó có toàn bộ đáp án!
   Nếu bạn tự nhiên thấy code dừng thì hãy giúp nó một chút nhé~!
