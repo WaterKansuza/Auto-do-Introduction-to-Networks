@@ -9,9 +9,12 @@ B2: Nhấn F12 (vì trang không thể chuột phải), tìm đến ô **Sources
 
 B3: New snippet và dán code [*main.js*](https://github.com/WaterKansuza/Auto-do-Introduction-to-Networks/blob/3b690144d6d7c419596a98a535b521e6504c6f85/main.js) vào khu vực trống.
 
+**Lưu ý:** Với code tại main.js mới, bạn sẽ không cần phải copy toàn bộ file md vào nhưng bạn phải làm một bước nữa.
+B3.5: ![second picture](https://github.com/WaterKansuza/Auto-do-Introduction-to-Networks/blob/9b9536f344917cb28dbd66a1a1978e48b5afed68/src/tutorial2.png)
+
 B4: Chuột phải vào Snippet bạn vừa tạo và nhấn **Run**.
 
-B5: copy toàn bộ file [Checkpoint1.md](https://github.com/WaterKansuza/Auto-do-Introduction-to-Networks/blob/98b53ac6902c42d57268e20743fb9b015ad7a411/Checkpoint1.md) rồi dán vào ô nó vừa hiện ở góc trên giữa màn hình.
+~~B5: copy toàn bộ file [Checkpoint1.md](https://github.com/WaterKansuza/Auto-do-Introduction-to-Networks/blob/98b53ac6902c42d57268e20743fb9b015ad7a411/Checkpoint1.md) rồi dán vào ô nó vừa hiện ở góc trên giữa màn hình.~~
 
 B6: Enjoy!!
 
